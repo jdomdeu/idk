@@ -1,0 +1,21 @@
+App.css
+.App {
+  text-align: center;
+  background-color: #f0f0f0;
+  font-family: 'Courier New', Courier, monospace, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Bokor';
+  font-size: 80px;
+  
+}
+
+.noise-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}

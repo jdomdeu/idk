@@ -1,0 +1,319 @@
+Variables para colores
+:root {
+    --black: #000000;
+    --white: #fafafa;
+    --purple: #8949b7;
+    --blue: #1300ff;
+    --gray: #777;
+    --highlight-color: #ff6347; /* Nuevo color para términos específicos */
+}
+
+.intro-text {
+    font-size: 1.5rem; /* Incrementar el tamaño de fuente */
+    font-weight: bold; /* Aplicar negrita */
+    margin-bottom: 1rem; /* Añadir algo de espacio debajo */
+    color: #333; /* Ajusta el color si es necesario */
+}
+
+.movement-gif {
+    display: block; /* Asegura que se comporte como un bloque */
+    margin: 0 auto; /* Centra horizontalmente */
+    width: 80%; /* Ajusta el tamaño relativo */
+    max-width: 600px; /* Tamaño máximo para evitar que sea demasiado grande */
+    height: auto; /* Mantiene las proporciones */
+    border-radius: 8px; /* Opcional: Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: Añade sombra */
+}
+
+.transparent-gif {
+    display: block; /* Asegura que se comporte como un bloque */
+    margin: 0 auto; /* Centra horizontalmente */
+    width: 80%; /* Ajusta el tamaño relativo */
+    max-width: 600px; /* Tamaño máximo para evitar que sea demasiado grande */
+    height: auto; /* Mantiene las proporciones */
+    border-radius: 8px; /* Opcional: Bordes redondeados */
+}
+
+.vertical-gif {
+    display: inline-block; /* Alinea los GIFs en línea */
+    width: 45%;  /* Ajusta el tamaño de cada GIF */
+    max-width: 300px;
+    height: auto; /* Mantiene las proporciones */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px; /* Espacio entre los GIFs */
+  }
+  
+
+.codetext {
+    background-color: #585454; /* Fondo claro para el texto de código */
+    padding: 0.1rem 0.3rem; /* Espaciado interno */
+    border-radius: 3px; /* Bordes ligeramente redondeados */
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada */
+    color: #ffffff; /* Color del texto del código */
+}
+
+
+/* Estilos generales */
+body {
+    --black: #000000;
+    --ash-black: #222;
+    --white: #fafafa;
+    --sky: #00ccff;
+    --green: #22dddd;
+    --blue: #1300ff;
+    --dusk: #6600ff;
+    --purple: #9900ff;
+    --pink: #ff0066;
+    --red: #fe0222;
+    --orange: #fd7702;
+    --yellow: #ffbb00;
+  
+    --background: var(--white);
+    --accent: var(--black);
+  
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--accent);
+    padding-bottom: 100px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: justify;
+    
+}
+
+/* Barra de progreso */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: var(--purple);
+    transform-origin: 0%;
+    z-index: 10; /* Asegura que la barra de progreso esté por encima del contenido */
+}
+
+/* Estilos para el contenedor del código */
+.code-container {
+    background-color: #c1bfc4 !important; /* Fondo gris oscuro */
+    font-family: 'Fira Code', monospace !important; /* Tipografía monoespaciada */
+    font-size: 16px !important; /* Tamaño de fuente */
+    padding: 20px !important; /* Espaciado interno */
+    border-radius: 8px !important; /* Bordes redondeados */
+    overflow-x: auto !important; /* Desplazamiento horizontal si es necesario */
+    margin-top: 20px !important;
+    white-space: pre-wrap !important; /* Ajusta el contenido largo */
+    max-height: 400px !important; /* Limitar la altura */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Sombra para destacar el código */
+}
+
+/* Estilo de la barra de desplazamiento */
+.code-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.token {
+    text-shadow: none;
+  }
+
+.code-container::-webkit-scrollbar-thumb {
+    background-color: #d1c7c7;
+    border-radius: 4px;
+}
+
+.code-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Resaltado de sintaxis (prismjs maneja esto) */
+.code-container .token {
+    background: none !important; /* Eliminar cualquier resaltado de fondo */
+    text-shadow: none !important; /* Eliminar cualquier sombra de texto */
+    border: none !important; /* Eliminar cualquier borde aplicado */
+}
+
+.code-container .token.keyword {
+    color: #4f7ced; /* Color para palabras clave (ej. 'if', 'else') */
+}
+
+.code-container .token.comment {
+    color: #33a04e; /* Color para comentarios */
+}
+
+.code-container .token.string {
+    color: #d82b73; /* Color para cadenas de texto */
+}
+
+.code-container .token.number {
+    color: #e451dd; /* Color para números */
+}
+
+.code-container .token.function {
+    color: #a63ee7; /* Color para funciones */
+}
+
+.code-container .token.variable {
+    color: #f1fa8c; /* Color para variables */
+}
+
+.code-container .token.operator {
+    color: #8be9fd; /* Color para operadores (como +, -, =, etc.) */
+}
+
+/* Opcional: Colores adicionales */
+.code-container .token.class-name {
+    color: #26ab7d; /* Color para nombres de clases */
+}
+
+.code-container .token.punctuation {
+    color: #f8f8f2; /* Color para puntuación (como ;, {}, etc.) */
+}
+
+/* Mejorar la visibilidad de la barra de desplazamiento */
+.code-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.code-container::-webkit-scrollbar-thumb {
+    background-color: #555 ;
+    border-radius: 5px;
+}
+
+.code-container::-webkit-scrollbar-thumb:hover {
+    background-color: #2a2929;
+}
+
+.code-container .token { 
+    text-shadow: none;
+}
+
+/* Pie de página */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: var(--blue);
+    text-align: center;
+    color: var(--black);
+    font-size: 14px;
+}
+
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: var(--purple);
+    transform-origin: 0%;
+}
+
+/* Toggle del code */
+.code-container2 {
+    background-color: #c1bfc4 !important; /* Fondo gris oscuro */
+    font-family: 'Fira Code', monospace !important; /* Tipografía monoespaciada */
+    width: 100%;
+    height: 100%;
+    font-size: 16px !important; /* Tamaño de fuente */
+    padding: 20px !important; /* Espaciado interno */
+    border-radius: 8px !important; /* Bordes redondeados */
+    margin-top: 20px !important;
+    white-space: pre-wrap !important; /* Ajusta el contenido largo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Sombra para destacar el código */
+}
+  /* Cabecera donde se encuentran las pestañas de selección */
+  .code-header {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+
+  .code-content{
+    color: #c1bfc4 !important;
+  }
+  
+  /* Estilo de las pestañas de selección */
+  .tab-button {
+    background-color: #333;  /* Fondo oscuro para las pestañas */
+    border: 1px solid #444; /* Borde sutil */
+    color: #ccc; /* Texto claro */
+    padding: 12px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  
+  /* Efecto cuando la pestaña está activa */
+  .tab-button.active {
+    background-color: #a919bf; /* Azul para la pestaña activa */
+    color: white;
+    border-color: #a919bf; /* Borde azul */
+  }
+  
+  
+  /* Código resaltado con PrismJS */
+  .language-csharp {
+    font-family: 'Courier New', monospace;
+  }
+  
+  .code-content {
+    background-color: #c1bfc4 !important; /* Fondo gris oscuro */
+    font-family: 'Fira Code', monospace !important; /* Tipografía monoespaciada */
+    font-size: 16px !important; /* Tamaño de fuente */
+    padding: 20px !important; /* Espaciado interno */
+    overflow-x: auto !important; /* Desplazamiento horizontal si es necesario */
+    margin-top: 20px !important;
+    white-space: pre-wrap !important; /* Ajusta el contenido largo */
+    max-height: 400px !important; /* Limitar la altura */
+    overflow: hidden;
+}
+
+/* Estilo de la barra de desplazamiento */
+.code-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.token {
+    text-shadow: none;
+  }
+
+.code-content::-webkit-scrollbar-thumb {
+    background-color: #7b7878;
+    border-radius: 4px;
+}
+
+.code-content::-webkit-scrollbar-thumb:hover {
+    background-color: #262525;
+}
+
+/* Resaltado de sintaxis (prismjs maneja esto) */
+.code-content .token {
+    background: none !important; /* Eliminar cualquier resaltado de fondo */
+    text-shadow: none !important; /* Eliminar cualquier sombra de texto */
+    border: none !important; /* Eliminar cualquier borde aplicado */
+}
