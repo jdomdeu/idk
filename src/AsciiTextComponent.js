@@ -262,38 +262,49 @@ class CanvAscii {
   }
 
   setMesh() {
-    this.textCanvas = new CanvasTxt(this.textString, {
-      fontSize: this.textFontSize,
-      fontFamily: 'IBM Plex Mono',
-      color: this.textColor,
-    });
+  this.textCanvas = new CanvasTxt(this.textString, {
+    fontSize: this.textFontSize,
+    fontFamily: 'IBM Plex Mono',
+    color: this.textColor,
+  });
+
+  this.textCanvas.resize();
+  this.textCanvas.render();
+
+  // Creamos primero la textura vacía
+  this.texture = new THREE.CanvasTexture(this.textCanvas.texture);
+  this.texture.minFilter = THREE.NearestFilter;
+  this.texture.needsUpdate = true; // Forzamos actualización
+
+  const textAspect = this.textCanvas.width / this.textCanvas.height;
+  const baseH = this.planeBaseHeight;
+  const planeW = baseH * textAspect;
+  const planeH = baseH;
+
+  this.geometry = new THREE.PlaneGeometry(planeW, planeH, 36, 36);
+  this.material = new THREE.ShaderMaterial({
+    vertexShader,
+    fragmentShader,
+    transparent: true,
+    uniforms: {
+      uTime: { value: 0 },
+      mouse: { value: 1.0 },
+      uTexture: { value: this.texture },
+      uEnableWaves: { value: this.enableWaves ? 1.0 : 0.0 }
+    },
+  });
+
+  this.mesh = new THREE.Mesh(this.geometry, this.material);
+  this.scene.add(this.mesh);
+
+  // 👇 Forzamos re-render después de un frame para asegurar tamaño y texto OK
+  requestAnimationFrame(() => {
     this.textCanvas.resize();
     this.textCanvas.render();
-    
-    this.texture = new THREE.CanvasTexture(this.textCanvas.texture);
-    this.texture.minFilter = THREE.NearestFilter;
+    this.texture.needsUpdate = true;
+  });
+}
 
-    const textAspect = this.textCanvas.width / this.textCanvas.height;
-    const baseH = this.planeBaseHeight;
-    const planeW = baseH * textAspect;
-    const planeH = baseH;
-
-    this.geometry = new THREE.PlaneGeometry(planeW, planeH, 36, 36);
-    this.material = new THREE.ShaderMaterial({
-      vertexShader,
-      fragmentShader,
-      transparent: true,
-      uniforms: {
-        uTime: { value: 0 },
-        mouse: { value: 1.0 },
-        uTexture: { value: this.texture },
-        uEnableWaves: { value: this.enableWaves ? 1.0 : 0.0 }
-      },
-    });
-
-    this.mesh = new THREE.Mesh(this.geometry, this.material);
-    this.scene.add(this.mesh);
-  }
 
   setRenderer() {
     this.renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
@@ -397,7 +408,7 @@ class CanvAscii {
 }
 
 export default function ASCIIText({
-  text = 'David!',
+  text = 'Shuxyzz',
   asciiFontSize = 8,
   textFontSize = 200,
   textColor = '#fdf9f3',
