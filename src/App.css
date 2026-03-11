@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
 App.css
 .App {
   text-align: center;
@@ -7,7 +10,7 @@ App.css
 }
 
 h1 {
-  font-family: 'Bokor';
+  font-family: 'Bebas Neue';
   font-size: 80px;
   
 }
@@ -19,3 +22,4 @@ h1 {
   width: 100vw;
   height: 100vh;
 }
+
